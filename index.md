@@ -1,5 +1,4 @@
-Here you can say lots of fun things about your site.
+Thanks for stopping by! This is where I like to post about things I am working on, what I have learned, or just any topic I find interesting.
 
-Maybe say a some things about yourself.
+If you arrived here by my resume, a special welcome! You can find blog posts about all my projects I have mentioned below
 
-Or maybe what you plan to blog about.
