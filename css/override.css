@@ -45,6 +45,9 @@ hr {
 }
 
 body {
-  background: #252a34;
+  background: #252a34; 
+  color: #ffffff;
+}
+p, h1, h2, h3, h4, h5, h6, a, span {
   color: #ffffff;
 }
