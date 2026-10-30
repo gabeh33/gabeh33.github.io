@@ -1,0 +1,56 @@
+<!--
+{
+  "title": "Locking down a localhost dashboard",
+  "date": "2026-10-28",
+  "summary": "My project dashboard can start and stop processes. Binding to 127.0.0.1 isn't enough to keep a random website from driving it. Here's what is.",
+  "tags": ["Web security", "CSRF", "DNS rebinding"]
+}
+-->
+<p>I run a handful of side projects on my Mac mini, each on its own port. I lost track of them, so I built Project Hub: one page on <code>localhost:9999</code> that lists every project, shows what's running, and has Start and Stop buttons.</p>
+
+<p>Those buttons run shell commands. That makes the hub a juicy target, even though it only listens on 127.0.0.1.</p>
+
+<h2>Why 127.0.0.1 isn't a security boundary</h2>
+
+<p>Binding to loopback stops other machines from connecting. It does nothing about the browser sitting on the same machine. Any website I visit can tell my browser to send a request to <code>http://localhost:9999</code>. Two attacks fall out of that:</p>
+
+<ul>
+  <li><strong>CSRF.</strong> A page submits a form or fires a <code>fetch()</code> at <code>localhost:9999/api/projects/x/start</code>. The browser sends it. The response is blocked from the attacker by the same-origin policy, but the side effect already happened. If the attacker can also add a project with their own start command, that's remote code execution through my browser.</li>
+  <li><strong>DNS rebinding.</strong> An attacker's domain resolves to their server, serves a page, then flips its DNS record to 127.0.0.1. Now the page is talking to my hub while the browser believes it's same-origin, so it can read responses too.</li>
+</ul>
+
+<h2>Three checks that close it</h2>
+
+<p><strong>1. Allowlist the Host header.</strong> Every request must arrive with <code>Host: localhost:9999</code> or <code>127.0.0.1:9999</code>. After a rebind, the browser still sends the attacker's hostname, so those requests get a 403. This one check kills DNS rebinding.</p>
+
+<pre><code>def _allowed_host(self):
+    return self.headers.get("Host", "") in {
+        f"localhost:{PORT}", f"127.0.0.1:{PORT}"}</code></pre>
+
+<p><strong>2. Require a custom header and JSON on every write.</strong> Plain HTML forms can't set custom headers or send <code>application/json</code>. A cross-origin <code>fetch()</code> that does either triggers a CORS preflight, and the hub never answers preflights. So a request carrying <code>X-Hub: 1</code> can only come from the hub's own page.</p>
+
+<p><strong>3. Check Origin when the browser sends one.</strong> Belt and suspenders: if an <code>Origin</code> header is present and it isn't the hub itself, reject it.</p>
+
+<pre><code>def _write_ok(self):
+    origin = self.headers.get("Origin")
+    return (self._allowed_host()
+        and self.headers.get("X-Hub") == "1"
+        and self.headers.get("Content-Type", "").startswith("application/json")
+        and (origin is None or origin in GOOD_ORIGINS))</code></pre>
+
+<h2>Testing it</h2>
+
+<p>I tested each case with curl before trusting it:</p>
+
+<ul>
+  <li>A write without <code>X-Hub</code>: <code>403 forbidden</code></li>
+  <li>A write with <code>Origin: http://evil.com</code>: <code>403 forbidden</code></li>
+  <li>Any request with <code>Host: evil.com:9999</code>: <code>403 bad host</code></li>
+  <li>The real page: works</li>
+</ul>
+
+<h2>What I'd still watch</h2>
+
+<p>This keeps other websites out. It doesn't protect against malware already running as my user, which could just call the API directly. That's an acceptable trade for a personal tool. The bigger risk is me: a tunnel like Tailscale Funnel forwards traffic to localhost, so loopback binding wouldn't stop it, and exposing port 9999 that way would hand anyone a shell. The README says never to do it.</p>
+
+<p>The same pattern applies to any local dev server, agent, or admin panel. If it listens on localhost and does something with side effects, assume a browser tab is going to talk to it.</p>

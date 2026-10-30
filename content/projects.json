@@ -1,0 +1,61 @@
+{
+  "featured": [
+    {
+      "title": "AutoRespond",
+      "category": "Detection engineering",
+      "icon": "radar",
+      "color": "green",
+      "summary": "A detection-as-code harness that loads Sigma rules and runs them against simulated AWS CloudTrail logs, with pytest tests so a rule change gets checked before it ships.",
+      "angle": "Treats detections like code: versioned, tested, and tuned against real-looking log data instead of guesswork.",
+      "tags": ["Python", "Sigma", "AWS CloudTrail", "pytest"],
+      "links": [{"label": "Code", "url": "https://github.com/gabeh33/AutoRespond", "icon": "github"}]
+    },
+    {
+      "title": "Project Hub",
+      "category": "Security tooling",
+      "icon": "terminal",
+      "color": "pink",
+      "summary": "A local control panel for everything I run on localhost. It finds new services by watching listening ports, shows what's up, and starts or stops them.",
+      "angle": "A local tool that runs shell commands is a CSRF target. It checks Host and Origin and requires a custom header, which blocks cross-site requests and DNS rebinding.",
+      "tags": ["Python stdlib", "launchd", "Web security"],
+      "links": [{"label": "Write-up", "url": "writing/locking-down-a-localhost-dashboard/", "icon": "pen", "internal": true}]
+    },
+    {
+      "title": "Job Pipeline",
+      "category": "Automation",
+      "icon": "briefcase",
+      "color": "blue",
+      "summary": "Collects security job postings every morning, scores them against my profile with an LLM, and pre-fills applications in my own browser for me to review and submit.",
+      "angle": "Guardrails first: LLM calls run with no tool access, personal data stays in a gitignored file and out of prompts, scraping is rate-limited, and it never submits anything on its own.",
+      "tags": ["Python", "FastAPI", "Playwright", "SQLite"],
+      "links": []
+    },
+    {
+      "title": "Travel Dashboard",
+      "category": "Self-hosted",
+      "icon": "globe",
+      "color": "orange",
+      "summary": "A self-hosted travel atlas built from my photo library and drone footage: a 3D globe of every trip with day-by-day galleries.",
+      "angle": "Split into two servers. The owner server never leaves my LAN and Tailscale. Only a separate read-only build, with hidden items stripped out, is published through Tailscale Funnel.",
+      "tags": ["Node", "Vite", "Tailscale", "Python"],
+      "links": []
+    },
+    {
+      "title": "Disk Cleaner",
+      "category": "Security tooling",
+      "icon": "trash",
+      "color": "yellow",
+      "summary": "A Mac app that shows what's filling the disk, finds duplicates, and cleans up only what I approve.",
+      "angle": "Every API call needs a random token generated at launch, requests are limited to an allowlisted Host, and nothing is deleted without review. Removed files go to the Trash so they can be restored.",
+      "tags": ["Python", "macOS"],
+      "links": []
+    }
+  ],
+  "coursework": [
+    {"title": "Malware analysis and threat hunting (CS-501)", "summary": "Analyzed malware from a simulated APT and built tooling to emulate its capabilities on Windows.", "url": "https://github.com/gabeh33/Windows-Malware-Analysis"},
+    {"title": "Blind buffer overflow", "summary": "Exploited a remote service without access to its source or binary.", "url": "https://github.com/gabeh33/BlindBufferOverflow"},
+    {"title": "Passive network attack", "summary": "Captured a victim's traffic and replaced it with attacker-controlled data.", "url": "https://github.com/gabeh33/PassiveNetworkAttack"},
+    {"title": "DLL injection", "summary": "Tested DLL injection techniques on Windows.", "url": "https://github.com/gabeh33/DLL_injection"},
+    {"title": "Cryptographic shell scripting", "summary": "Built a working digital envelope in Bash.", "url": "https://github.com/gabeh33/CryptographicShellScripting"}
+  ]
+}

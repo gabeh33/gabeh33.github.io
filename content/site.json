@@ -1,0 +1,19 @@
+{
+  "name": "Gabe Holmes",
+  "short": "GH",
+  "title": "Security Operations Manager",
+  "location": "Boston, MA",
+  "url": "https://gabeh33.github.io",
+  "kicker": "Hi, I'm Gabe Holmes",
+  "headline": "Security operations, from first alert to final fix.",
+  "intro": "I'm a Security Operations Manager at Boston Networks, an MSP in Stoneham, MA. I run detection and response across 40+ client environments: triaging alerts in Microsoft Sentinel and Sophos, writing Sigma and KQL, and hardening the configs that keep incidents from happening twice.",
+  "status": "Open to incident response, detection engineering, and cloud security roles",
+  "photo": "",
+  "description": "Gabe Holmes is a Security Operations Manager in Boston focused on incident response, detection engineering, and Microsoft security. Portfolio, projects, and write-ups.",
+  "email": "gabeholmes1@gmail.com",
+  "socials": [
+    {"name": "LinkedIn", "url": "https://linkedin.com/in/gabe-holmes", "icon": "linkedin", "handle": "in/gabe-holmes", "color": "blue"},
+    {"name": "GitHub", "url": "https://github.com/gabeh33", "icon": "github", "handle": "gabeh33", "color": "green"},
+    {"name": "Email", "url": "mailto:gabeholmes1@gmail.com", "icon": "mail", "handle": "gabeholmes1@gmail.com", "color": "pink"}
+  ]
+}

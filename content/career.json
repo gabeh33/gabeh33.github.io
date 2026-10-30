@@ -1,0 +1,88 @@
+[
+  {
+    "role": "Security Operations Manager",
+    "org": "Boston Networks, LLC",
+    "place": "Stoneham, MA",
+    "period": "Nov 2025 - Present",
+    "type": "work",
+    "label": "Full time",
+    "icon": "shield",
+    "points": [
+      "Designed and deployed standardized security configurations across 40+ client environments",
+      "Built security playbooks in Python and KQL that automate alert response based on each client's industry",
+      "Escalation point for complex incidents: compromised accounts, tricky malware detections, lateral movement",
+      "Scope and act on findings with external penetration testers to harden the internal corporate network"
+    ],
+    "tags": ["Incident response", "KQL", "Python", "Pen test remediation"]
+  },
+  {
+    "role": "Security Operations Center Analyst",
+    "org": "Boston Networks, LLC",
+    "place": "Stoneham, MA",
+    "period": "Aug 2024 - Nov 2025",
+    "type": "work",
+    "label": "Full time",
+    "icon": "radar",
+    "points": [
+      "Triaged 100+ alerts a day from Microsoft Sentinel, Sophos EDR, and RMM tooling for 40+ clients",
+      "Handled malware, business email compromise, token theft, suspicious sign-ins, and policy violations",
+      "Wrote and tuned Sigma detection rules to cut false positives and alert fatigue",
+      "Built working knowledge of attacker TTPs in Windows, Azure, and GCP environments"
+    ],
+    "tags": ["Sentinel", "Sophos EDR", "Sigma", "BEC"]
+  },
+  {
+    "role": "Lead Teaching Assistant, System Security",
+    "org": "Northeastern University",
+    "place": "Boston, MA",
+    "period": "Jan 2023 - May 2023",
+    "type": "education",
+    "label": "Teaching",
+    "icon": "board",
+    "points": [
+      "Led the TA team for Northeastern's System Security course and supported students through its coursework"
+    ],
+    "tags": ["System security", "Teaching"]
+  },
+  {
+    "role": "IT Internal Audit Analyst Co-op",
+    "org": "Biogen",
+    "place": "Cambridge, MA",
+    "period": "May 2022 - Dec 2022",
+    "type": "work",
+    "label": "Co-op",
+    "icon": "search",
+    "points": [
+      "Tested 70+ IT and cybersecurity SOX controls and turned findings into risk assessments for executives",
+      "Worked with control owners to carry out remediation plans and close security gaps",
+      "Built audit documentation that made future audit cycles repeatable"
+    ],
+    "tags": ["SOX", "GRC", "Audit"]
+  },
+  {
+    "role": "Teaching Assistant, Foundations of Cybersecurity",
+    "org": "Northeastern University",
+    "place": "Boston, MA",
+    "period": "Jan 2022 - Jun 2022",
+    "type": "education",
+    "label": "Teaching",
+    "icon": "board",
+    "points": [
+      "Supported students in Northeastern's introductory cybersecurity course"
+    ],
+    "tags": ["Teaching"]
+  },
+  {
+    "role": "BS in Cybersecurity",
+    "org": "Northeastern University",
+    "place": "Boston, MA",
+    "period": "Aug 2020 - Aug 2024",
+    "type": "education",
+    "label": "Degree",
+    "icon": "cap",
+    "points": [
+      "Dean's Scholarship recipient, 3.6 GPA"
+    ],
+    "tags": ["Malware analysis", "Network security", "Systems"]
+  }
+]

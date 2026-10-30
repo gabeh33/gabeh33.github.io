@@ -1,0 +1,9 @@
+[
+  {"code": "MS-102", "name": "Microsoft 365 Administrator Expert", "issuer": "Microsoft", "date": "Jul 2026", "color": "blue"},
+  {"code": "SC-300", "name": "Identity and Access Administrator Associate", "issuer": "Microsoft", "date": "May 2026", "color": "pink"},
+  {"code": "Security+", "name": "CompTIA Security+", "issuer": "CompTIA", "date": "Nov 2025", "color": "orange"},
+  {"code": "Network+", "name": "CompTIA Network+", "issuer": "CompTIA", "date": "Aug 2025", "color": "green"},
+  {"code": "A+", "name": "CompTIA A+", "issuer": "CompTIA", "date": "Mar 2025", "color": "yellow"},
+  {"code": "SC-900", "name": "Security, Compliance, and Identity Fundamentals", "issuer": "Microsoft", "date": "Feb 2025", "color": "blue"},
+  {"code": "MS-900", "name": "Microsoft 365 Fundamentals", "issuer": "Microsoft", "date": "Feb 2025", "color": "pink"}
+]
